@@ -1,0 +1,30 @@
+<% @page_title = "AdminUsers" %>
+
+<%= link_to("<< Voltar", {:controller => "access", :action => "index"}) %>
+
+<div class="pacientes index">
+	<h2>Pacientes</h2>
+
+	<%= link_to(image_tag('plus-sign.png', :size => '16x16', :alt => '+') + "Cadastrar Paciente", new_paciente_path, :class => 'action new') %>
+
+	<div> <%= pluralize(@pacientes.size, 'Paciente') %> encontrados</div>
+	<table class="listing" summary="paciente list">
+		<tr class="header">
+			<th>Nome</th>
+			<th>E-Mail</th>
+			<th>Telefone</th>
+		<tr>
+		<% @pacientes.each do |paciente| %>
+		<tr class="<%= cycle('odd', 'even') %>">
+			<td><%= paciente.nome %></td>
+			<td><%= mail_to(paciente.email) %></td>
+			<td><%= paciente.telefone %></td>
+			<td class="actions">
+				<%= link_to("Detalhes", paciente_path(paciente.id), :class => 'action show') %>
+				<%= link_to("Edit", edit_paciente_path(paciente.id), :class => 'action edit') %>
+				<%= link_to("Delete", delete_paciente_path(paciente.id), :class => 'action delete') %>
+			</td>
+		</tr>
+		<% end %>
+	</table>
+</div>

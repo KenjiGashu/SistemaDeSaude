@@ -1,0 +1,16 @@
+<%= link_to("<< Voltar", pacientes_path, :class => 'back-link') %>
+
+<div class="paciente edit">
+	<h2>Deletar paciente</h2>
+
+	<%= form_for(:paciente, :url => paciente_path(@paciente.id), :html => {:method => :delete}) do |f| %>
+		<p>Deseja deletar este paciente?</p>
+
+		<p class="reference-name"><%= @paciente.nome %></p>
+
+		<div class="form-buttons">
+			<%= submit_tag("deletar paciente") %>
+		</div>
+		
+	<% end %>
+</div>

@@ -1,0 +1,28 @@
+<%= link_to("<< Voltar", pacientes_path, :class => 'back-link') %>
+
+<div class="paciente show">
+	<h2>Detalhes do Paciente</h2>
+
+	<table summary="paciente detail view">
+		<tr>
+			<th>Nome</th>
+			<td><%= @paciente.nome %></td>
+		</tr>
+		<tr>
+			<th>RG</th>
+			<td><%= @paciente.rg %></td>
+		</tr>
+		<tr>
+			<th>E-Mail</th>
+			<td><%= @paciente.email %></td>
+		</tr>
+		<tr>
+			<th>Endereço</th>
+			<td><%= @paciente.endereco %></td>
+		</tr>
+		<tr>
+			<th>Telefone</th>
+			<td><%= @paciente.telefone %></td>
+		</tr>
+	</table>
+</div

@@ -1,0 +1,20 @@
+<%= link_to("<< Voltar", medicos_path, :class => 'back-link') %>
+
+<div class="medico show">
+	<h2>Detalhes do medico</h2>
+
+	<table summary="medico detail view">
+		<tr>
+			<th>Nome</th>
+			<td><%= @medico.nome %></td>
+		</tr>
+		<tr>
+			<th>RG</th>
+			<td><%= @medico.especialidade %></td>
+		</tr>
+		<tr>
+			<th>Telefone</th>
+			<td><%= @medico.telefone %></td>
+		</tr>
+	</table>
+</div

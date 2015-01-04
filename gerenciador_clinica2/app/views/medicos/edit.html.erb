@@ -1,0 +1,17 @@
+<% @page_title = "Cadastro de Medico" %>
+
+<%= link_to("<< Voltar", medicos_path, :class => 'back-link') %>
+
+<div class="medico edit">
+	<h2>Cadastro de Medico</h2>
+
+	<%= form_for(@medico) do |f| %>
+		
+		<%= render(:partial => "form", :locals => {:f => f}) %>
+
+		<div class="form-buttons">
+			<%= submit_tag("Cadastrar") %>
+		</div>
+		
+	<% end %>
+</div>

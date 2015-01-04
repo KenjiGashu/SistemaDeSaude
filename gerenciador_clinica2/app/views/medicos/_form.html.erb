@@ -1,0 +1,16 @@
+<%= error_messages_for(@paciente) %>
+
+<table summary="paciente">
+	<tr>
+		<th><%= f.label(:nome) %></th>
+		<td><%= f.text_field(:nome) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label(:especialidade) %></th>
+		<td><%= f.text_field(:especialidade) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label(:telefone) %></th>
+		<td><%= f.text_field(:telefone) %></td>
+	</tr>
+</table>
