@@ -1,13 +1,13 @@
 <html>
 	<div style="background-color:#e5eecc; position: absolute; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%); text-align:center; width:50%; height:50%;">
-		<%= form_for(@admin) do |f| %>
-		
-			<%= render(:partial => "form", :locals => {:f => f}) %>
+		<form action="login/new" methor="post">
+			<input type="text" name="admin[nome]" />
+			<input type="text" name="admin[email]" />
+			<input type="text" name="admin[usuario]" />
+			<input type="text" name="admin[password]" />
+			<input type="text" name="confirm_password" />
 
-			<div class="form-buttons">
-				<%= submit_tag("Cadastrar") %>
-			</div>
-			
-		<% end %>
+			<input type="submit" name="commit" value="new admin"/>
+		</form>
 	</div>
 </html>
