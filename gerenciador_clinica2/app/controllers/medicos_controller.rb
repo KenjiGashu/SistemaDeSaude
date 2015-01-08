@@ -1,9 +1,20 @@
 class MedicosController < ApplicationController
+
+
+  def busca_nome (query)
+    where(["nome LIKE ?", "%#{query}%"])
+  end
+
+  def busca_especialidade (query)
+    where(["especialidade LIKE ?", "%#{query}%"])
+  end
   
-  layout "geral"
+
+
 
   def index
     @medicos = Medico.sorted
+    @mostra = false
     # renderiza a pagina com todos os medicos
   end
 

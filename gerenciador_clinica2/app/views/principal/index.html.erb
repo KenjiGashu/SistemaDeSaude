@@ -1,0 +1,111 @@
+﻿<html>
+
+	<head>
+	
+		<title>Principal</title>
+	
+	</head>
+	
+	<body bgcolor="#FFFFF0">
+	
+		<center>
+		
+			<header>
+			
+				<img src="imgHome/banner.png">
+			
+			</header>
+			
+			<nav>
+				<br>
+				<a href="home.html">
+				<img src="imgHome/bHome.png"></a>
+				<a href="Cadastro.html">
+				<img src="imgHome/bCadastro.png"></a>
+				<a href="medicos.html">
+				<img src="imgHome/bMedicos.png"></a>
+				<a href="local.html">
+				<img src="imgCadastro/bLocalizacao.png"></a>
+				<img src="imgHome/bVazio.png">
+			</nav>
+		
+		</center>
+		
+		<section>
+			
+			<table>
+				
+				<tr>
+					<!--Informações do cadastro-->
+					<td>
+					<center>
+						<%= link_to(image_tag("http://lebiscuit.com.br/wp-content/themes/lebiscuit/imgs/imgPreCadastro.png", :border => 0), {:action => 'search', :controller => 'pages'}) %>
+						<p>
+						 Trabalhe conosco, cadastre-se agora no nosso site para concorrer a uma de nossas vagas 
+						 <%= link_to('aqui',{:controller => 'medicos', :action => 'index'}) %>
+						</p>
+					</center>
+					</td>
+					<!--Informações aleatórias-->
+					<td>
+					<center>	
+						<a href="https://www.ucwrg.com/index/">
+						<img src="http://img2.wikia.nocookie.net/__cb20130307163717/villains/images/0/07/Umbrella_Corporation_Symbol.jpg"></a>
+						<p>
+						 Uma nova aliança foi formada com a corporação Umbrella, saiba mais sobre nosso novo aliado 
+						 <a href="https://www.ucwrg.com/index/">aqui</a>.
+						</p>
+					</center>
+					</td>
+					<!--Informações da localização-->
+					<td>
+					<center>
+						<a href="https://www.google.com.br/maps/search/Avenida+das+Ma%C3%A7as+Assassinas,+333,+Macieira+-+Fruntilandia/@-23.4814449,-46.4834525,15z/data=!3m1!4b1?hl=pt-BR">
+						<img src="http://searchengineland.com/figz/wp-content/seloads/2012/12/Screen-Shot-2012-12-14-at-12.25.12-PM.png"></a>
+						<p>
+						 Saiba como chegar a nossa empresa 
+						 <a href="https://www.google.com.br/maps/search/Avenida+das+Ma%C3%A7as+Assassinas,+333,+Macieira+-+Fruntilandia/@-23.4814449,-46.4834525,15z/data=!3m1!4b1?hl=pt-BR">aqui</a>.
+						</p>
+					</center>	
+					</td>
+					
+				</tr>
+				
+				<tr>
+					<!--Informações aleatórias-->
+					<td>
+						
+					</td>
+					<!--Informações dos médicos-->
+					<td>
+						<%= link_to(image_tag("http://ondasdovento.com.br/wp-content/uploads/2013/05/foto258.jpg", :border => 0), {:action => 'index', :controller => 'medicos'}) %>
+						<p>
+						 Conheça nosso corpo acadêmico clicando 
+						 <a href="medicos.html">aqui</a>.
+						</p>
+					</td>
+					<!--Informações aleatórias-->
+					<td>
+						
+					</td>
+					
+				</tr>
+				
+				
+			
+			</table>
+			
+		</section>
+		
+		<center>
+			<address>
+				<br><br><br>
+				Avenida das Maças Assassinas, 333, Macieira - Fruntilandia
+		
+			</address>
+		</center>
+		
+	
+	</body>
+
+</html>

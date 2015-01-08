@@ -5,13 +5,7 @@
   		Gerenciador de Clínica
   	</title>
   	<%= stylesheet_link_tag('application', :media => 'all') %>
-  	<nav>	
-		<div>
-			<%= link_to("Home", {:controller => :principal, :class => 'action show') %>
-			<%= link_to("Cadastro", edit_paciente_path(paciente.id), :class => 'action edit') %>
-			<%= link_to("Delete", delete_paciente_path(paciente.id), :class => 'action delete') %>
-		</div>
-	</nav>
+
 	</head>
 	<body>
 		<div id="header">

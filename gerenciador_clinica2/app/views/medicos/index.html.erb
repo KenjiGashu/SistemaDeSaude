@@ -1,8 +1,105 @@
 <% @page_title = "AdminUsers" %>
 
 <%= link_to("<< Voltar", {:controller => "access", :action => "index"}) %>
+<style>
+#leftcolumn {width:200px; padding:5px; float: left;}
+#medicos_index {}
+#pesquisa {background-color: #d8e2e4}
+#negrito {font-weight: bold}
+</style>
 
-<div class="medicos index">
+<div id = "leftcolumn"; float: left;>
+	<fieldset id="pesquisa">
+		<b>Nome ou CRM</b><br>
+		<% if params[:mostra] == true%>
+		<%=pinto %>
+		<p style:"display: none;">
+			<input type="text" name="nome_ou_crm"> <br>
+			<input type="radio" name="Acupuntura">Acupuntura <br>
+			<input type="radio" name="Alergia e Imunologia"> Alergia e Imunologia<br>
+			<input type="radio" name="Anestesiologia">Anestesiologia <br>
+			<input type="radio" name="Cancerologia">Cancerologia <br>
+			<input type="radio" name="Cardiologia">Cardiologia <br>
+			<input type="radio" name="Cardiologia Intervencio.">Cardiologia Intervencio. <br>
+			<input type="radio" name="Cirurgia Buco-Maxilo Facial">Cirurgia Buco-Maxilo Facial <br>
+			<input type="radio" name="Cirurgia Cardiovascular">Cirurgia Cardiovascular <br>
+			<input type="radio" name="Cirurgia Crânio-Maxilo-Facial">Cirurgia Crânio-Maxilo-Facial <br>
+			<input type="radio" name="Cirurgia de Cabeça e Pescoço">Cirurgia de Cabeça e Pescoço <br>
+			<input type="radio" name="Cirurgia de mão">Cirurgia de mão <br>
+			<input type="radio" name="Cirurgia do Aparelho Digestivo">Cirurgia do Aparelho Digestivo <br>
+			<input type="radio" name="Cirurgia Geral">Cirurgia Geral <br>
+			<input type="radio" name="Cirurgia Pediátrica">Cirurgia Pediátrica <br>
+			<input type="radio" name="Cirurgia Plástica">Cirurgia Plástica <br>
+			<input type="radio" name="Cirurgia Torácica">Cirurgia Torácica <br>
+			<input type="radio" name="Cirurgia Vascular/ Angiologia">Cirurgia Vascular/ Angiologia <br>
+			<input type="radio" name="Clínica Médica">Clínica Médica <br>
+			<input type="radio" name="Coloproctologia">Coloproctologia <br>
+			<input type="radio" name="Dermatologia">Dermatologia <br>
+			<input type="radio" name="Endocrinologia">Endocrinologia <br>
+			<input type="radio" name="Endoscopia">Endoscopia <br>
+			<input type="radio" name="Fisiatria">Fisiatria <br>
+			<input type="radio" name="Gastroenterologia">Gastroenterologia <br>
+			<input type="radio" name="Genética médica">Genética médica <br>
+			<input type="radio" name="Geriatria">Geriatria <br>
+			<input type="radio" name="Ginecologia e Obstetrícia">Ginecologia e Obstetrícia <br>
+			<input type="radio" name="Hematologia e Hemoterapia">Hematologia e Hemoterapia <br>
+			<input type="radio" name="Homeopatia">Homeopatia <br>
+			<input type="radio" name="Infectologia">Infectologia <br>
+			<input type="radio" name="Mastologia">Mastologia <br>
+			<input type="radio" name="Medicina de Família e Comunidade">Medicina de Família e Comunidade <br>
+			<input type="radio" name="Medicina do Trabalho">Medicina do Trabalho <br>
+			<input type="radio" name="Medicina do Tráfego">Medicina do Tráfego <br>
+			<input type="radio" name="Medicina esportiva">Medicina esportiva <br>
+			<input type="radio" name="Medicina Física e Reabilitação">Medicina Física e Reabilitação <br>
+			<input type="radio" name="Medicina Intensiva">Medicina Intensiva <br>
+			<input type="radio" name="Medicina Legal">Medicina Legal <br>
+			<input type="radio" name="Medicina nuclear">Medicina nuclear <br>
+			<input type="radio" name="Medicina Preventiva e Social">Medicina Preventiva e Social <br>
+			<input type="radio" name="Nefrologia">Nefrologia <br>
+			<input type="radio" name="Neurocirurgia">Neurocirurgia <br>
+			<input type="radio" name="Neurologia">Neurologia <br>
+			<input type="radio" name="Nutrologia">Nutrologia <br>
+			<input type="radio" name="Oftamologia">Oftamologia <br>
+			<input type="radio" name="Oncologia">Oncologia <br>
+			<input type="radio" name="Ortopedia e Traumatologia">Ortopedia e Traumatologia <br>
+			<input type="radio" name="Otorrinolaringologia">Otorrinolaringologia <br>
+			<input type="radio" name="Patologia">Patologia <br>
+			<input type="radio" name="Pediatria">Pediatria <br>
+			<input type="radio" name="Pneumologia">Pneumologia <br>
+			<input type="radio" name="Psiquiatria">Psiquiatria <br>
+			<input type="radio" name="Radiologia e Diagnóstico por imagem">Radiologia e Diagnóstico por imagem <br>
+			<input type="radio" name="Radiologia Geral e Imagem">Radiologia Geral e Imagem <br>
+			<input type="radio" name="Radiologia intervencionista">Radiologia intervencionista <br>
+			<input type="radio" name="Radioterapia">Radioterapia <br>
+			<input type="radio" name="Reumatologia">Reumatologia <br>
+			<input type="radio" name="Urologia">Urologia <br>
+			<%= params[:mostra] %><br>
+			<%=  link_to('ver menos',{:action => 'index', :mostra => false})%>
+		</p>
+		
+		<% else%>
+		<%="oi" %>
+		<p style:"display: block;">
+			<input type="text" name="nome_ou_crm"> <br>
+			<input type="radio" name="Acupuntura">Acupuntura <br>
+			<input type="radio" name="Alergia e Imunologia"> Alergia e Imunologia<br>
+			<input type="radio" name="Anestesiologia">Anestesiologia <br>
+			<input type="radio" name="Cancerologia">Cancerologia <br>
+			<input type="radio" name="Cardiologia">Cardiologia <br>
+			<input type="radio" name="Cardiologia Intervencio.">Cardiologia Intervencio. <br>
+			<input type="radio" name="Cirurgia Buco-Maxilo Facial">Cirurgia Buco-Maxilo Facial <br>
+			<%= params[:mostra] %><br>
+			<%= link_to('ver mais',{:action => 'index', :mostra => true})%>
+		</p>
+		<%end%>
+	</fieldset>
+	<% pinto = @medicos.where(:nome => 'af') %>
+	<% pinto.each do |pinto|%>
+	<%= pinto.nome %>
+	<% end %>
+</div>
+
+<div id="medicos_index">
 	<h2>Medicos</h2>
 
 	<%= link_to(image_tag('plus-sign.png', :size => '16x16', :alt => '+') + "Cadastrar Medico", new_medico_path, :class => 'action new') %>
