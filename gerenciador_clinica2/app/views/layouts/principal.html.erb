@@ -1,0 +1,66 @@
+<style>
+#canto {float:right;margin-right: 5px;}
+#quadrado {background-color:#add8e6; height:50px; font-size:30px; display:flex; align-items:center; justify-content:center;font-color:black; margin:0px;}
+</style>
+
+
+<html style="height:100%;">
+
+	<head>
+	
+		<title>Principal</title>
+	
+	</head>
+	
+	<div style="background-color:lightgrey; height:30px;";>
+		<%if session[:usuario] %>
+			<%=link_to('logout',{:controller => 'login', :action => 'logout'},class: "canto",id:"canto")%>
+			<%= simple_format(session[:usuario],:id=>"canto")%>
+			<a id="canto">Olá  </a>
+		<%else%>
+			<%=link_to('login',{:controller => 'login', :action => 'login'},class: "canto",id:"canto")%>
+			<%=link_to('Clique Aqui!',{:controller => 'login', :action => 'index'},class: "canto",id:"canto")%>
+			<a id="canto">Não é cadastrado? </a>
+		<%end%>
+	</div>
+	
+	<% if !flash[:notice].blank? %>
+		<div style="background-color:red;">
+			<%=flash[:notice]%>
+		</div>
+	<%end%>
+	
+	<div style="background-color:#ADD8E6; text-align:center;height:140px; vertical-align:middle; margin:0px auto">
+		<h1 style=" text-align:center; font-size:54px">
+			Sistema de Saúde <br>
+			Unificado de Fundilancia
+		</h1>
+	</div>
+
+	<div style="background-color:white ;height:10px;">
+		
+	</div>
+	<div style="display: flex; align-items: center; justify-content: center; ">
+		<%= link_to('Home',{:controller => 'principal' , :action => 'index'}, {:style => 'color:black',:id => 'quadrado'})%>
+		<div style="background-color:white; width:10px; height:50px;"></div>
+		<%= link_to('cadastro',{:controller => 'cadastro' , :action => 'index'}, {:style => 'color:black',:id => 'quadrado'})%>
+		<div style="background-color:white; width:10px; height:50px;"></div>
+		<%= link_to('Médicos',{:controller => 'medicos' , :action => 'index'}, {:style => 'color:black',:id => 'quadrado'})%>
+		<div style="background-color:white; width:10px; height:50px;"></div>
+		<%= link_to('Localicação',{:controller => 'localizacao',:action => 'index'}, {:style => 'color:black',:id => 'quadrado'})%>
+		<div style="background-color:white; width:10px; height:50px;"></div>
+		<%= link_to('Agendamento',{:controller =>'agendamento',:action => 'index'}, {:style => 'color:black',:id => 'quadrado'})%>
+	</div>
+	
+	<%=yield%>
+	
+	<center>
+		<address style="clear: both; height: 2.5em; text-align: right;
+  background: #ADD8E6 url('/assets/footer_gradient.png') repeat-y 0 0; color: black;	">
+			Avenida das Maças Assassinas, 333, Macieira - Fruntilandia
+
+		</address>
+	</center>
+
+	
+</html>

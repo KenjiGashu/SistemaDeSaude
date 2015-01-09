@@ -1,6 +1,6 @@
 class MedicosController < ApplicationController
 
-
+  layout "principal"
   def busca_nome (query)
     where(["nome LIKE ?", "%#{query}%"])
   end
@@ -65,6 +65,6 @@ class MedicosController < ApplicationController
   private
 
   def get_medico_params
-    return params.require(:medico).permit(:nome, :especialidade, :telefone)
+    return params.require(:medico).permit(:nome,:CRM, :especialidade, :telefone)
   end
 end

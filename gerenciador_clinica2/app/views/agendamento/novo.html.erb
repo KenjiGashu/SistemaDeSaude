@@ -1,0 +1,45 @@
+<head>
+
+
+	<title> Cadastro consulta</title>
+
+</head>
+
+<body bgcolor=#FFFFF0>
+
+
+	<section>
+			
+			<fieldset>
+				
+				<legend><b>Dados consulta</b></legend>
+				<strong>
+				<%= form_for(:consulta, :url => {:controller => 'agendamento', :action => 'salvar'}) do |a|%>
+					Motivo<br>
+					<%= a.text_area(:motivo, :style => "width:150px; height:100px;")%><br>
+					data da consulta<br>
+					<%= a.date_field(:data) %><br>
+					horário<br>
+					<%= a.time_field(:horario)%><br>
+					<%@consulta.medico_id = params[:id]%>
+					<%@consulta.paciente_id = session[:user_id]%>
+			</fieldset>
+					
+					
+			<%= submit_tag ("enviar")%>
+		<%end%>
+			<br>
+		
+
+	
+	</section>
+	
+	<footer>
+	
+		<!--Rodapé-->
+	
+	</footer>
+	
+	
+
+</body>

@@ -6,8 +6,16 @@
 		<td><%= f.text_field(:nome) %></td>
 	</tr>
 	<tr>
-		<th><%= f.label(:especialidade) %></th>
-		<td><%= f.text_field(:especialidade) %></td>
+		<th><%= f.label(:CRM) %><th>
+		<td><%= f.text_field(:CRM) %></td>	
+	</tr>
+	<tr>
+		<%= f.label(:especialidade) %><br>
+		<%= f.radio_button :especialidade, 'Oftalmo'%>Oftalmo<br>
+		<%= f.radio_button :especialidade, 'Cirurgião'%>Cirurgião<br>
+		<%= f.radio_button :especialidade, 'Pessoa'%>Pessoa<br>
+		<%= f.radio_button :especialidade, 'Morto-vivo'%>Morto-vivo<br>
+		<%= f.radio_button :especialidade, 'Alien'%>Alien<br>
 	</tr>
 	<tr>
 		<th><%= f.label(:telefone) %></th>

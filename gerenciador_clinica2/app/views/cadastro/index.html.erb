@@ -1,0 +1,82 @@
+<head>
+
+
+	<title> Cadastro </title>
+
+</head>
+
+<body bgcolor=#FFFFF0>
+
+
+	<section>
+	
+			
+			<fieldset>
+				
+				<legend><b>Dados pessoais</b></legend>
+				<strong>
+				<%= form_for(:concorrente, :url => {:controller => 'cadastro', :action => 'salva'}) do |a|%>
+					Nome<br>
+					<%= a.text_field(:nome)%><br>
+					RG<br>
+					<%= a.text_field(:rg)%><br>
+					CPF<br>
+					<%= a.text_field(:cpf)%><br>
+					data de nascimento<br>
+					<%= a.date_field(:data_nascimento)%><br>
+					endereço<br>
+					<%= a.text_field(:endereco)%><br>
+			</fieldset>
+					
+					
+				
+			<fieldset>
+				<legend><b>Dados profissionais</b></legend>
+				<strong>
+				Formação<br>
+				<%= a.radio_button :formacao, 'Graduado'%>Graduado<br>
+				<%= a.radio_button :formacao, 'Mestrado'%>Mestrado<br>
+				<%= a.radio_button :formacao, 'Doutorado'%>Doutorado<br>
+				<%= a.radio_button :formacao, 'Pos-Doutorado'%>Pós-Doutorado<br>
+				<%= a.radio_button :formacao, 'Livre-Docencia'%>Livre-Docência<br>
+				
+				Experiência <br>
+				
+				<%= a.radio_button :experiencia, true%>Sim<br>
+				<%= a.radio_button :experiencia, false%>Nao<br>
+				</strong>
+			
+				
+				
+				
+			
+				<strong>
+				Cargo Pretendido *<br>
+				<%= a.radio_button :cargo, 'Estagiario'%>Estagiário<br>
+				<%= a.radio_button :cargo, 'Assistente'%>Assistente<br>
+				<%= a.radio_button :cargo, 'Enfermeiro'%>Enfermeiro<br>
+				<%= a.radio_button :cargo, 'Oftalmo'%>Oftalmo<br>
+				<%= a.radio_button :cargo, 'Cirurgiao'%>Cirurgião<br>
+
+				
+				</strong>
+				<br>
+			
+			</fieldset>
+			<%= submit_tag ("enviar")%>
+		<%end%>
+			<br>
+		
+
+	
+	</section>
+	
+	<footer>
+	
+		<!--Rodapé-->
+	
+	</footer>
+	
+
+</body>
+

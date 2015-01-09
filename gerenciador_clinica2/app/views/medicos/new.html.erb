@@ -14,4 +14,20 @@
 		</div>
 		
 	<% end %>
+
+	<%= form_for(:consulta, :url => {:controller => 'agendamento', :action => 'busca'}) do |a|%>
+		nome<br>
+		<%= a.text_field(:nome) %><br>
+		CRM<br>
+		<%= a.text_field(:CRM) %><br>
+		telefone<br>
+		<%= a.text_field(:telefone) %><br>
+		Especialidade<br>
+		<%= a.radio_button :especialidade, 'Oftalmo'%>Oftalmo<br>
+		<%= a.radio_button :especialidade, 'Cirurgião'%>Cirurgião<br>
+		<%= a.radio_button :especialidade, 'Pessoa'%>Pessoa<br>
+		<%= a.radio_button :especialidade, 'Morto-vivo'%>Morto-vivo<br>
+		<%= a.radio_button :especialidade, 'Alien'%>Alien<br>
+		<%= submit_tag ("enviar")%>
+	<%end%>
 </div>

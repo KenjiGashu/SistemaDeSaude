@@ -1,13 +1,49 @@
+<style>
+	#centro {background-color:#e5eecc; position: absolute; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%); text-align:center; width:50%; height:50%;}
+</style>
 <html>
-	<div style="background-color:#e5eecc; position: absolute; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%); text-align:center; width:50%; height:50%;">
-		<form action="login/new" methor="post">
-			<input type="text" name="admin[nome]" />
-			<input type="text" name="admin[email]" />
-			<input type="text" name="admin[usuario]" />
-			<input type="text" name="admin[password]" />
-			<input type="text" name="confirm_password" />
+	<div>
 
-			<input type="submit" name="commit" value="new admin"/>
-		</form>
+		<%= form_for(:user, :url => {:controller => 'login', :action => 'new'} ) do |a|%>
+			<strong> 
+			<tr>
+				<th><%= a.label(:nome) %></th><br>
+				<td><%= a.text_field(:nome) %></td><br>
+			</tr>
+			<tr>
+				<th><%= a.label(:rg) %></th><br>
+				<td><%= a.text_field(:rg) %></td><br>
+			</tr>
+			<tr>
+				<th><%= a.label(:cpf) %></th><br>
+				<td><%= a.text_field(:cpf) %></td><br>
+			</tr>
+			<tr>
+				<th><%= a.label(:nascimento) %></th><br>
+				<td><%= a.date_field(:nascimento) %></td><br>
+			</tr>
+			<tr>
+				<th><%= a.label(:convenio) %></th><br>
+				<td><%= a.text_field(:convenio) %></td><br>
+			</tr>
+			<tr>
+				<th><%= a.label(:endereco) %></th><br>
+				<td><%= a.text_area(:endereco, :size => '40x5') %></td><br>
+			</tr>
+			<tr>
+				<th><%= a.label(:telefone) %></th><br>
+				<td><%= a.text_field(:telefone) %></td><br>
+			</tr>
+			usuario<br>
+			<%= a.text_field(:usuario)%><br>
+			email<br>
+			<%= a.text_field(:email)%><br>
+			senha<br>
+			<%= a.password_field(:password)%><br>
+			confirmar senha<br>
+			<%= password_field_tag('confirm_password')%><br>
+			</strong>
+			<%= submit_tag ("cadastrar")%>
+		<%end%>
 	</div>
 </html>

@@ -1,0 +1,41 @@
+<title>Escolha de médico</title>
+<h1><strong>Encontre um médico</strong></h1>
+<nav style="background-color:gray; width:200px; float:left;">
+	<strong>
+		<%= form_for(:consulta, :url => {:controller => 'agendamento', :action => 'busca'}) do |a|%>
+			nome<br>
+			<%= a.text_field(:nome) %><br>
+			CRM<br>
+			<%= a.text_field(:CRM) %><br>
+			Especialidade<br>
+			<%= a.radio_button :especialidade, 'Oftalmo'%>Oftalmo<br>
+			<%= a.radio_button :especialidade, 'Cirurgião'%>Cirurgião<br>
+			<%= a.radio_button :especialidade, 'Pessoa'%>Pessoa<br>
+			<%= a.radio_button :especialidade, 'Morto-vivo'%>Morto-vivo<br>
+			<%= a.radio_button :especialidade, 'Alien'%>Alien<br>
+			<%= submit_tag ("enviar")%>
+		<%end%>
+	</strong>
+</nav>
+
+<nav style="position:absolute; left:250px; up:300px; height:700px;">
+	<%= pluralize(@medicos.size, 'medico')%> encontrados<br>
+	<strong>Escolha um médico para agendar uma consulta</strong><br>
+	<table class="listing" summary="medico list">
+		<tr class="header">
+			<th>Nome</th>
+			<th>Especialidade</th>
+			<th>Telefone</th>
+		<tr>
+		<% @medicos.each do |medico| %>
+		<tr class="<%= cycle('odd', 'even') %>">
+			<td><%= medico.nome %></td>
+			<td><%= medico.especialidade %></td>
+			<td><%= medico.telefone %></td>
+			<td class="actions">
+				<%= link_to("Escolher este médico", {:controller => 'agendamento', :action => 'novo', :id => medico.id}) %>
+			</td>
+		</tr>
+		<% end %>
+	</table>
+</nav>

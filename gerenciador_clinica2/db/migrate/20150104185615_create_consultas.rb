@@ -3,8 +3,9 @@ class CreateConsultas < ActiveRecord::Migration
     create_table :consultas do |t|
     	t.integer "paciente_id"
     	t.integer "medico_id"
-    	t.datetime "data_consulta"
-    	t.boolean "confirmada"
+      t.string "motivo"
+    	t.date "data"
+      t.time "horario"
       t.timestamps null: false
     end
   end

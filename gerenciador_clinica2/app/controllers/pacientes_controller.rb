@@ -1,6 +1,6 @@
 class PacientesController < ApplicationController
 
-	layout "geral"
+	layout "principal"
 
   def index
   	@pacientes = Paciente.sorted
@@ -54,6 +54,6 @@ class PacientesController < ApplicationController
   private
 
   def get_paciente_params
-  	return params.require(:paciente).permit(:nome, :rg, :email, :endereco, :telefone, :password, :password_confirmation)
+  	return params.require(:paciente).permit(:nome, :rg,:cpf, :nascimento,:convenio, :email, :endereco, :telefone, :password, :password_confirmation)
   end
 end
